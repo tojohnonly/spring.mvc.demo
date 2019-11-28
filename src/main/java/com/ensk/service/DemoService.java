@@ -1,6 +1,7 @@
 package com.ensk.service;
 
 import com.ensk.entity.Product;
+import com.ensk.exception.BusinessException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,8 +17,7 @@ public class DemoService {
         } else if ("car".equals(type)) {
             return new Product(1, "Nissan GT-R R36", "car", 136.66);
         } else {
-            return new Product(-1, "Unknown", "unknown", -1.0);
+            throw new BusinessException("Unknown Type");
         }
     }
-
 }
