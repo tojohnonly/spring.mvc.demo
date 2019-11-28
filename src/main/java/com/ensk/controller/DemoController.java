@@ -1,5 +1,6 @@
 package com.ensk.controller;
 
+import com.ensk.entity.Product;
 import com.ensk.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,13 +29,13 @@ public class DemoController {
 
     @ResponseBody
     @RequestMapping(value = "/product", method = RequestMethod.GET)
-    public String getProduct() {
+    public Product getProduct() {
         return demoService.getProduct();
     }
 
     @ResponseBody
     @RequestMapping("/product/{type}")
-    public String getProductByType(@PathVariable String type) {
+    public Product getProductByType(@PathVariable String type) {
         return demoService.getProductByType(type);
     }
 
